@@ -7,14 +7,15 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+    extend: {  
       fontFamily:{
         'urbanist': ['Urbanist', 'sans-serif'],
+      },
+      colors:{
+        'primary': '#fbfaf7',
+        'secondary': '#1010100d',
+        'dark' : '#242424',
+        'light' : '#a5a5a5'
       }
     },
   },
