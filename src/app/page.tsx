@@ -1,9 +1,13 @@
+import Banner from '@/components/Banner'
+import Products from '@/components/Products';
+import { getProduct } from '@/helpers'
 import Image from 'next/image'
 
-export default function Home() {
+export default async function Home() {
   return (
     <main > 
-      <h1 className='font-urbanist'>Test123</h1>
+     <Banner/>
+     <Products/>
     </main>
   )
 }

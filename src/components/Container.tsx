@@ -6,7 +6,7 @@ import React from 'react'
 
 const Container = ({children, className}: Props) => {
   return (
-    <div className={`${className} max-w-[1320px] mx-auto px-4 xl:px-0`}>
+    <div className={`${className} max-w-[1320px] mx-auto px-2 sm:px-4 xl:px-0`}>
       {children}
     </div>
   )

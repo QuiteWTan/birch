@@ -10,6 +10,11 @@ const config: Config = {
     extend: {  
       fontFamily:{
         'urbanist': ['Urbanist', 'sans-serif'],
+        'rubik': ['Rubik Glitch', 'system-ui'],
+        'anton': ['Anton', 'sans-serif'],
+        'archivo': ['Archivo Black', 'sans-serif'],
+        'marker': ['Permanent Marker', 'cursive'],
+        'rowdies': ['Rowdies', 'sans-serif']
       },
       colors:{
         'primary': '#fbfaf7',
