@@ -24,17 +24,17 @@ const Banner = () => {
         }}
         >
           <div className='w-full h-full rounded-xl overflow-hidden bg-slate-100 relative'>
-            <Image src={Model1} alt="" width={0} height={0} className="w-full h-full object-fill absolute brightness-75"/>
-            <div className='absolute w-full flex items-center justify-center bottom-4 gap-4 md:gap-8'>
+            <Image src={Model1} alt="" width={0} height={0} className="w-full h-full object-fill absolute brightness-75 hover:scale-105 duration-500 transition-all"/>
+            <div className='absolute w-full flex flex-col min-[400px]:flex-row md:flex-col lg:flex-row items-center justify-center bottom-4 gap-4 md:gap-8'>
 
-              <div className='group bg-white px-4 md:px-8 py-2 md:py-3 rounded-full flex items-center gap-4'>
+              <div className='cursor-pointer group bg-white px-4 md:px-8 py-2 md:py-3 rounded-full flex items-center gap-4'>
                 <h1 className='text-sm md:text-base font-bold font-rowdies group-hover:translate-x-5 duration-500 transition-all'>LEARN MORE</h1>
                 <div className='w-8 h-8 rounded-full bg-black flex items-center justify-center group-hover:translate-x-5 duration-500 transition-all'>
                   <IoMdArrowRoundDown  className="text-[24px] text-white"/>
                 </div>
               </div>
 
-              <div className='group border-white border-2 px-4 md:px-8 py-2 md:py-3 rounded-full flex items-center gap-4 text-white'>
+              <div className='cursor-pointer group border-white border-2 px-4 md:px-8 py-2 md:py-3 rounded-full flex  items-center gap-4 text-white'>
                 <h1 className='text-sm md:text-base font-bold font-rowdies group-hover:translate-x-5 duration-500 transition-all'>SHOP NOW</h1>
                 <div className='w-8 h-8 rounded-full bg-white flex items-center justify-center group-hover:translate-x-5 duration-500 transition-all'>
                   <FaBagShopping className="text-[20px] text-black"/>

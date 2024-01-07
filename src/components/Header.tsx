@@ -11,10 +11,9 @@ import Image from 'next/image';
 
 const Header = () => {
   const {data:session} = useSession();
-  console.log(session)
   
   return (
-    <div className='bg-primary '>
+    <div className='bg-primary sticky top-0 z-50'>
         <Container className=' max-w-[1440px] py-2 h-full flex items-center md:gap-x-5 justify-between md:justify-start'>
             <Logo/>
 
