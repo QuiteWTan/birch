@@ -17,3 +17,12 @@ export const getSingleProduct = (_id:number) => {
     const item = productData.find((product) => product._id  === _id);
     return item
 }
+
+export const getTrendingProducts = async() => {
+    const res = await fetch("http://localhost:3000/api/trendingproducts");
+    if(!res.ok){
+        throw new Error("Failed to fetch product");
+    }
+    
+    return res.json();
+}
