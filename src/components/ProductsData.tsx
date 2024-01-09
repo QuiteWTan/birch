@@ -42,15 +42,15 @@ const ProductsData = ({item} : ItemProps) => {
             item?.isNew && <span className='absolute right-2 top-2 font-medium text-xs py-1 px-4 rounded-full bg-white group-hover:bg-white/50 duration-500 transition-all group-hover:text-yellow-700'>New Arrival</span>
           }
           {
-                        isWishlist ? 
-                        <div className='absolute top-2 left-2 text-[20px] md:text-[25px]'>
-                            <FaBookmark/>
-                        </div>
-                        :
-                        <div className='absolute top-2 left-2 text-[20px] md:text-[25px]'>
-                            <FaRegBookmark/>
-                        </div>
-                    }
+              isWishlist ? 
+              <div className='absolute top-2 left-2 text-[20px] md:text-[25px]'>
+                  <FaBookmark/>
+              </div>
+              :
+              <div className='absolute top-2 left-2 text-[20px] md:text-[25px]'>
+                  <FaRegBookmark/>
+              </div>
+          }
         </div>
 
         <div className='border-[1px] border-slate-300 border-t-0 px-2 pt-2 pb-4 flex flex-col gap-y-1 bg-white rounded-b-lg'>

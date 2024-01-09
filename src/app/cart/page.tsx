@@ -20,7 +20,7 @@ const CartPage = () => {
             <h2 className='text-xl md:text-3xl lg:text-5xl font-semibold mb-2'> Cart</h2>
             <div>
               <CartItem/>
-              <div className='flex items-center justify-end'>
+              <div className='flex items-center justify-end mt-2'>
                 <button onClick={() => dispatch(resetCart())} className='bg-red-500 text-base font-semibold text-slate-100 py-2 px-6 hover:bg-red-700 hover:text-white duration-300 transition-all'>Drop Cart</button>
               </div>
               <PaymentForm/>

@@ -28,7 +28,7 @@ const CartItem = () => {
                   <span className='text-[20px] md:text-[24px] hover:text-red-600 cursor-pointer duration-500' onClick={() => dispatch(deleteProduct(item?._id))}>
                     <FaTrashAlt />
                   </span>
-                  <Image src={item?.image} width={500} height={500} alt='' className='w-20 h-20 object-cover'/>
+                  <Image src={item?.image} width={500} height={500} alt='' className='w-20 h-20 object-cover' loading='lazy'/>
                 </div>
                   <div className='flex items-center justify-start gap-x-1  w-fit md:w-auto text-lg'>
                     <span onClick={() => dispatch(decreaseQuantity(item))} className='cursor-pointer p-2 bg-black text-white'>

@@ -61,10 +61,16 @@ const initialState: StoreState= {
       }, 
       deleteUser : (state) => {
         state.userInfo = null
+      },
+      saveOrder: (state, action) => {
+        state.orderData = action.payload
+      }, 
+      resetOrder : (state) => {
+        state.orderData = []
       }
     },
   })
 
-  export const {addToCart,addToWishlist, removeFromWishlist, increaseQuantity, decreaseQuantity, deleteProduct, resetCart, addUser, deleteUser} = slicer.actions;
+  export const {addToCart,addToWishlist, removeFromWishlist, increaseQuantity, decreaseQuantity, deleteProduct, resetCart, addUser, deleteUser, saveOrder, resetOrder} = slicer.actions;
 
   export default slicer.reducer;

@@ -6,6 +6,7 @@ import Logo from './Logo'
 import { IoIosSearch } from "react-icons/io";
 import { FaUser, FaOpencart } from "react-icons/fa";
 import { useSession, signIn, signOut } from 'next-auth/react'; 
+import { AiOutlineTransaction } from "react-icons/ai";
 import { IoExitOutline } from "react-icons/io5";
 import Image from 'next/image';
 import { useDispatch, useSelector } from 'react-redux';
@@ -19,6 +20,9 @@ const Header = () => {
   const {productData} = useSelector((state:StateProps) => state.shopping)
   const dispatch = useDispatch()
   const [totalAmount, setTotalAmount] = useState(0)
+  const checkSession = () => {
+    console.log(session)
+  }
   useEffect(() => {
     if(session) {
       dispatch(addUser({
@@ -28,8 +32,9 @@ const Header = () => {
       }))
     }else{
       dispatch(deleteUser())
+
     }
-  }, [])
+  },  [session, dispatch])
   useEffect(() => {
     let amount = 0;
     productData?.map((item:Product) => (
@@ -38,11 +43,11 @@ const Header = () => {
     setTotalAmount(amount)
   }, [productData])
   return (
-    <div className='bg-primary sticky top-0 z-50'>
+    <div className='bg-primary sticky top-0 z-50' onClick={() => checkSession()}>
         <Container className=' max-w-[1440px] py-2 h-full flex items-center md:gap-x-5 justify-between md:justify-start'>
             <Logo/>
 
-            <div className=' items-center rounded-full border-2  px-2 py-2 md:px-4 text-gray-500 w-full border-lightText/80 focus-within:border-black group duration-300 transition-colors hidden md:flex'>
+            <div className=' items-center rounded-full border-2  px-2 py-2 md:px-4 text-gray-500 w-full border-lightText/80 focus-within:border-black group duration-300 transition-colors hidden md:flex' >
                 <IoIosSearch className="text-[20px] mr-2 group-focus-within:text-black duration-300 transition-colors"/>
                 <input type="text" placeholder='search for products' className='bg-transparent focus:outline-none border-l-2 border-gray-300 px-4 group-focus-within:border-black duration-300 transition-colors'/>
             </div>
@@ -57,7 +62,11 @@ const Header = () => {
                   <p className='absolute -top-1 -right-1 bg-white rounded-full flex items-center justify-center text-black w-5 h-5 shadow-xl border'>{productData? productData?.length : 0}</p>
                 </div>
               </Link>
-
+              <Link href={'/order'}>
+                <div className='bg-white border-2 p-2 md:p-3 text-[24px] rounded-full'>
+                  <AiOutlineTransaction />
+                </div>
+              </Link>
               {
                 session ? 
                   <div onClick={ () => signOut()} className='flex items-center bg-gray-200 hover:bg-gray-300 py-2 px-2 md:px-4 rounded-full gap-2 font-urbanist duration-500 cursor-pointer font-bold'>
