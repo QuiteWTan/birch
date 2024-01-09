@@ -22,6 +22,7 @@ export interface Product {
       orderData: {
         order: Product[];
       };
+      wishlist: []
     };
   }
   
