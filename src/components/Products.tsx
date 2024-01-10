@@ -24,7 +24,7 @@ const Products = async () => {
           
           {
               productData?.map((item: Product, index:number) => (
-                  !item?.isNew && <div key={index}><ProductsData item={item} key={item._id} /></div>
+                  !item?.isNew && <div key={index}><ProductsData item={item} /></div>
               ))
           }
       </div>
