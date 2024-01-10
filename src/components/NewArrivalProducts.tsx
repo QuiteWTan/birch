@@ -72,7 +72,7 @@ const NewArrivalProducts = () => {
         <Slider {...sliderSettings} className="flex gap-4 overflow-hidden">  
             {
                 productData?.map((item: Product, index:number) => (
-                    item?.isNew && <NewArrivalProductsData item={item} key={item._id} />
+                    item?.isNew && <div key={index}><NewArrivalProductsData item={item} key={item._id} /></div>
                 ))
             }
         </Slider>
