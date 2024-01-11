@@ -37,7 +37,7 @@ const FourthSection = () => {
         <div className='flex items-center gap-2 backdrop-blur-2xl bg-white/30 p-4 rounded-2xl'>
           <span className='flex -space-x-4 overflow-hidden'>
             {
-              PEOPLE_URL.map((url)=>(
+              PEOPLE_URL.map((url, index)=>(
                 <Image
                 className='inline-block h-10 w-10 rounded-full'
                   src={url}

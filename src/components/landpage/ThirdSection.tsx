@@ -40,7 +40,7 @@ const ThirdSection = () => {
                 {
                     productDatas?.slice(0, 3).map((item:Product, index:number) => (
                         
-                        <div className={`${imagesToShow === index ? 'w-[50%]' : 'w-[25%]'} relative h-full duration-300 transition-all overflow-hidden`}>
+                        <div className={`${imagesToShow === index ? 'w-[50%]' : 'w-[25%]'} relative h-full duration-300 transition-all overflow-hidden`} key={item._id}>
                             <div className='w-full'>
                                 <Image src={item?.image} alt='' width={500} height={500} className=' h-[500px] absolute object-cover rounded-lg w-full'/>
                             </div>

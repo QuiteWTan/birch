@@ -58,7 +58,9 @@ const FifthSection = () => {
                 <div className='flex flex-col py-6 gap-y-4 w-full'>
                       {
                       Questions.map((Q,index) => (
-                        <FAQ Ques={Q.Question} Ans={Q.Answer} i={index} drop={drop} set={setDrop}/>
+                        <div key={index}>
+                          <FAQ Ques={Q.Question} Ans={Q.Answer} i={index} drop={drop} set={setDrop}/>
+                        </div>
                       ))
                       }
                 </div>
