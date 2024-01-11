@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link';
 import React from 'react'
-import { FaRegUser } from "react-icons/fa";
 import { FaLocationArrow } from "react-icons/fa";
 
 const FirstSection = () => {
