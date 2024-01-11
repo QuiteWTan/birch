@@ -6,7 +6,7 @@ import { BiCartAdd } from 'react-icons/bi'
 import { CiBookmark } from "react-icons/ci";
 import toast, { Toaster } from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux'
-import { StoreState, addToCart, addToWishlist, removeFromWishlist } from '@/redux/slicer'
+import { addToCart, addToWishlist, removeFromWishlist } from '@/redux/slicer'
 import { isProductInWishlist } from '@/redux/selector'
 import { FaBookmark } from "react-icons/fa";
 

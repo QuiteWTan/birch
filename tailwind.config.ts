@@ -14,7 +14,8 @@ const config: Config = {
         'anton': ['Anton', 'sans-serif'],
         'archivo': ['Archivo Black', 'sans-serif'],
         'marker': ['Permanent Marker', 'cursive'],
-        'rowdies': ['Rowdies', 'sans-serif']
+        'rowdies': ['Rowdies', 'sans-serif'],
+        'roboto': ['Roboto', 'sans-serif']
       },
       colors:{
         'primary': '#fbfaf7',

@@ -14,6 +14,7 @@ import { Product, StateProps } from '../../type';
 import { StoreState, addUser, deleteUser } from '@/redux/slicer';
 import FormattedPrice from './FormattedPrice';
 import Link from 'next/link';
+import { MdBookmarks } from "react-icons/md";
 
 const Header = () => {
   const {data:session} = useSession();
@@ -42,6 +43,7 @@ const Header = () => {
     ))
     setTotalAmount(amount)
   }, [productData])
+
   return (
     <div className='bg-primary sticky top-0 z-50' onClick={() => checkSession()}>
         <Container className=' max-w-[1440px] py-2 h-full flex items-center md:gap-x-5 justify-between md:justify-start'>
@@ -62,11 +64,15 @@ const Header = () => {
                   <p className='absolute -top-1 -right-1 bg-white rounded-full flex items-center justify-center text-black w-5 h-5 shadow-xl border'>{productData? productData?.length : 0}</p>
                 </div>
               </Link>
+              <Link  href={'/wishlist'} className='text-[24px] border-2 rounded-full  p-2 md:p-3'>
+                <MdBookmarks />
+              </Link>
               <Link href={'/order'}>
-                <div className='bg-white border-2 p-2 md:p-3 text-[24px] rounded-full'>
+                <div className=' border-2 p-2 md:p-3 text-[24px] rounded-full'>
                   <AiOutlineTransaction />
                 </div>
               </Link>
+              
               {
                 session ? 
                   <div onClick={ () => signOut()} className='flex items-center bg-gray-200 hover:bg-gray-300 py-2 px-2 md:px-4 rounded-full gap-2 font-urbanist duration-500 cursor-pointer font-bold'>
