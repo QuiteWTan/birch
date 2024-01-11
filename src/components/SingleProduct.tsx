@@ -15,16 +15,24 @@ const SingleProduct = ({product} : any) => {
     const dispatch = useDispatch()
     const [isWishlist, setIsWishlist] = useState(false);
 
+    const checkWishlist = () => {
+        const check = wishlist.find((item : Product) => item?._id === product?._id)
+        if(check){
+            setIsWishlist(true)
+            toast.success("Removed from wishlist")
+        }else{
+            setIsWishlist(false)
+            toast.success ("added to wishlist")
+        }
+    }
 
     useEffect(() => {
         const checkWishlist = () => {
             const check = wishlist.find((item : Product) => item?._id === product?._id)
             if(check){
                 setIsWishlist(true)
-                toast.success("Removed from wishlist")
             }else{
                 setIsWishlist(false)
-                toast.success ("added to wishlist")
             }
         }
         checkWishlist()
@@ -58,7 +66,7 @@ const SingleProduct = ({product} : any) => {
                     </button>
                     {isWishlist ? (
                         <button className=' shadow-md border py-2 px-2 md:py-3 md:px-4 tracking-wide rounded-sm  duration-500 transition-all text-[20px] md:text-[26px] flex items-center justify-center hover:scale-105 gap-2' 
-                        onClick={() => dispatch(removeFromWishlist(product))}>
+                        onClick={() => dispatch(removeFromWishlist(product)) && checkWishlist()}>
                             <FaBookmark/>
                             
                             <h1 className='hidden md:block text-sm font-bold'>Added to Wishlist</h1>
@@ -66,7 +74,7 @@ const SingleProduct = ({product} : any) => {
                     ) : (
                         
                         <button className=' shadow-md border py-2 px-2 md:py-3 md:px-4 tracking-wide rounded-sm  duration-500 transition-all text-[20px] md:text-[26px] flex items-center justify-center hover:scale-105 gap-2' 
-                        onClick={() =>  dispatch(addToWishlist(product))}>
+                        onClick={() =>  dispatch(addToWishlist(product)) && checkWishlist()}>
                             <CiBookmark />
                             <h1 className='hidden md:block text-sm font-bold'>Wishlist</h1>
                         </button>

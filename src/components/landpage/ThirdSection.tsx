@@ -4,6 +4,7 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 import { HiArrowTrendingUp } from "react-icons/hi2";
 import { Product } from '../../../type';
+import Link from 'next/link';
 
 const ThirdSection = () => {
     const [productDatas, setProductData] = useState<Product[]>([]);
@@ -49,10 +50,13 @@ const ThirdSection = () => {
 
                                 <h1 className={`${imagesToShow === index ? 'block' : 'hidden md:block'} text-sm md:text-2xl lg:text-3xl font-bold `}>{item?.title}</h1>
                                 <p className={`${imagesToShow === index ? 'block' : 'hidden'} text-xs sm:text-sm`}>{item?.description}</p>
-                                <button className={`${imagesToShow === index ? 'block' : 'hidden md:block'} bg-white py-2 w-full items-center text-[12px] md:text-[20px] text-black justify-between rounded-full font-bold gap-4 px-2 md:px-6 hidden md:flex `}>
-                                    Interested ?
-                                    <HiArrowTrendingUp className={`${imagesToShow === index ? 'block' : 'hidden'}`}/>
-                                </button>
+                                <Link href={'/home'}>
+                                    <button className={`${imagesToShow === index ? 'block' : 'hidden md:block'} bg-white py-2 w-full items-center text-[12px] md:text-[20px] text-black justify-between rounded-full font-bold gap-4 px-2 md:px-6 hidden md:flex `}>
+                                        Interested ?
+                                        <HiArrowTrendingUp className={`${imagesToShow === index ? 'block' : 'hidden'}`}/>
+                                    </button>
+                                </Link>
+                                
                             </div>
                             {
                                 imagesToShow === index ?

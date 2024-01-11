@@ -4,6 +4,7 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import { HiArrowTrendingUp } from 'react-icons/hi2'
 import FAQ from '../FAQ'
+import Link from 'next/link'
 
 const FifthSection = () => {
   const [drop, setDrop] = useState(-1)
@@ -33,7 +34,9 @@ const FifthSection = () => {
   return (
     <div className='w-full px-4 h-[1100px] md:h-[600px] py-6 my-6'>
       <div className='w-full h-full relative'>
+        <Link href={'/home'}>
         <button className='absolute -bottom-10 translate-y-[-50%] left-[50%] translate-x-[-50%] px-12 py-3 bg-dark text-white rounded-full z-50 border-4 border-white'>Get Started</button>
+        </Link>
         <Image src={'/SS3.jpg'} alt='' width={500} height={500} className='absolute w-full h-full rounded-2xl object-cover brightness-75'/>
 
         <div className='absolute grid grid-rows-2 md:grid-rows-none md:grid-cols-2 p-6 w-full h-full justify-between gap-6 md:gap-2'>

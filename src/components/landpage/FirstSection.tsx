@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link';
 import React from 'react'
 import { FaRegUser } from "react-icons/fa";
 import { FaLocationArrow } from "react-icons/fa";
@@ -60,9 +61,12 @@ const FirstSection = () => {
                 <div className='flex flex-col gap-y-6'>
                    <h1 className='text-white max-w-[500px] w-full text-xs md:text-sm'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</h1> 
                    <div className='flex items-center justify-between'>
-                        <button className='py-3 px-6 rounded-full bg-white text-black font-bold w-fit'>
-                            Get Started 
-                        </button>
+                        <Link href={'/home'}>
+                            <button className='py-3 px-6 rounded-full bg-white text-black font-bold w-fit'>
+                                Get Started 
+                            </button>
+                        </Link>
+                       
                         <button className='border-2 border-white px-6 py-3 rounded-full text-white'> 
                             Know More
                         </button>
