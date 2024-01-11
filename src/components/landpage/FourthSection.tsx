@@ -7,7 +7,7 @@ import { PEOPLE_URL } from '@/constants/data';
 const FourthSection = () => {
   const name = ['Company Place 1', 'Company Place 2', 'Company Place 3']
   const elements = Array.from({length:3}).map((_,index) => (
-    <div className='w-full h-[100px] md:h-[200px] relative font-urbanist'>
+    <div className='w-full h-[100px] md:h-[200px] relative font-urbanist' key={index}>
       <Image src={`/SS${index+1}.jpg`} alt='' width={500} height={500} className='rounded-md h-full absolute'/>
       <div className='absolute top-2 left-2 border-white border-2 rounded-full text-white text-[16px] md:text-[20px] p-2'>
         <FaExpandArrowsAlt />
@@ -41,7 +41,7 @@ const FourthSection = () => {
                 <Image
                 className='inline-block h-10 w-10 rounded-full'
                   src={url}
-                  key={url}
+                  key={index}
                   alt='people'
                   width={40}
                   height={40}

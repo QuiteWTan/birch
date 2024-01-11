@@ -30,7 +30,7 @@ const NewArrivalProductsData = ({item} : ItemProps) => {
         checkWishlist()
     }, [])
     const startArray = Array.from({length: item?.rating}, (_, index) => (
-        <span>
+        <span key={item._id}>
           <FaStar className="text-yellow-500 text-[16px] md:text-[18px]"/>
         </span>
     ))
