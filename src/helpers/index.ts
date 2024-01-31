@@ -1,7 +1,9 @@
 import { productData } from "@/constants/data";
 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || '';
+
 export const getProducts = async() => {
-    const res = await fetch("http://localhost:3000/api/products");
+    const res = await fetch(`${API_BASE_URL}/api/products`);
     if(!res.ok){
         throw new Error("Failed to fetch product");
     }
@@ -19,7 +21,7 @@ export const getSingleProduct = (_id:number) => {
 }
 
 export const getTrendingProducts = async() => {
-    const res = await fetch("http://localhost:3000/api/trendingproducts");
+    const res = await fetch(`${API_BASE_URL}/api/trendingproducts`);
     if(!res.ok){
         throw new Error("Failed to fetch product");
     }
