@@ -1,6 +1,6 @@
 import { productData } from "@/constants/data";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || '';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL ;
 
 export const getProducts = async() => {
     const res = await fetch(`${API_BASE_URL}/api/products`);
